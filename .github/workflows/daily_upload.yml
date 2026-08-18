@@ -1,0 +1,64 @@
+name: Daily YouTube Automation Pipeline
+
+on:
+  schedule:
+    # Triggers daily at 12:00 UTC (6:00 PM BST)
+    - cron: '0 12 * * *'
+  push:
+    branches: [ main, master ]
+  workflow_dispatch: # Enables manual trigger button on GitHub UI
+
+jobs:
+  generate-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11 with Pip Caching
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: 'requirements.txt'
+
+      - name: Cache FFmpeg Binary
+        id: cache-ffmpeg
+        uses: actions/cache@v4
+        with:
+          path: |
+            /usr/bin/ffmpeg
+            /usr/bin/ffprobe
+          key: ffmpeg-binary-ubuntu-latest
+
+      - name: Install FFmpeg (Cache Fallback)
+        if: steps.cache-ffmpeg.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install Python Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Cache & Restore SQLite Database State
+        uses: actions/cache@v4
+        with:
+          path: data/yt_automator.db
+          key: sqlite-db-v1-${{ github.run_id }}
+          restore-keys: |
+            sqlite-db-v1-
+
+      - name: Configure Environment & Secret Credentials
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          YOUTUBE_CLIENT_SECRETS: ${{ secrets.YOUTUBE_CLIENT_SECRETS }}
+          YOUTUBE_TOKEN: ${{ secrets.YOUTUBE_TOKEN }}
+        run: |
+          python setup_secrets.py
+
+      - name: Execute Daily Video Pipeline
+        run: |
+          python main.py
