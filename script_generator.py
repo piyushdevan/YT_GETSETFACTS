@@ -58,7 +58,7 @@ def generate_script(topic: str, video_format: str) -> Dict[str, Any]:
     if video_format == "short":
         word_count = "120-150 words, fast-paced, strong hook in the first sentence"
     else:
-        word_count = "700-900 words, structured with an introduction, 3-4 key points, and a conclusion"
+        word_count = "1500-1700 words, structured with an introduction, 6-7 key points, and a conclusion"
 
     prompt = f"""
 Write a YouTube video script about: "{topic}"
