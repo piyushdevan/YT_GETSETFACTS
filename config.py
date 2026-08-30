@@ -17,7 +17,7 @@ YOUTUBE_TOKEN_FILE = BASE_DIR / "youtube_token.json"
 
 # Channel & Production Settings
 CHANNEL_NICHE = os.getenv("CHANNEL_NICHE", "interesting facts and educational content")
-DAILY_SHORTS_COUNT = int(os.getenv("DAILY_SHORTS_COUNT", "1"))
+DAILY_SHORTS_COUNT = int(os.getenv("DAILY_SHORTS_COUNT", "2"))
 DAILY_LONGFORM_COUNT = int(os.getenv("DAILY_LONGFORM_COUNT", "1"))
 YOUTUBE_PRIVACY_STATUS = os.getenv("YOUTUBE_PRIVACY_STATUS", "public")
 
