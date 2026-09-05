@@ -37,7 +37,7 @@ def generate_topic(video_format: str) -> str:
 
     for attempt in range(4):
         prompt = f"""
-You generate YouTube video topics for an facts channel.
+You generate YouTube video topics for an trending recent facts channel.
 Niche: {config.CHANNEL_NICHE}
 Provide ONE single unique topic idea suitable for {length_hint}.{exclusion_text}
 Reply with ONLY the topic title, nothing else. No quotes, no numbering.
