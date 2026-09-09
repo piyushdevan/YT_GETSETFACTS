@@ -37,8 +37,21 @@ def generate_topic(video_format: str) -> str:
 
     for attempt in range(4):
         prompt = f"""
-You generate YouTube video topics for an trending recent facts channel.
+You generate curiosity-driven topic with strong potential for broad YouTube audience interest.
 Niche: {config.CHANNEL_NICHE}
+TOPIC SELECTION RULES:
+- Prefer topics connected to recent events, discoveries, records, sightings,
+  missions, research, or developments.
+- Prefer subjects that ordinary people can understand immediately.
+- Prefer topics that can be explained with compelling visuals.
+- Prefer topics that create an immediate "Wait, what?" reaction.
+- Prefer surprising, rare, extreme, mysterious, unusual, or record-breaking subjects.
+- The topic must have a strong curiosity gap.
+- Avoid topics that require specialist knowledge.
+- Avoid boring textbook-style educational topics.
+- Avoid generic "facts about X" topics.
+- Avoid topics based primarily on explanations of how ordinary systems work.
+
 Provide ONE single unique topic idea suitable for {length_hint}.{exclusion_text}
 Reply with ONLY the topic title, nothing else. No quotes, no numbering.
 """
