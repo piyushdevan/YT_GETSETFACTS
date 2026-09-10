@@ -69,9 +69,9 @@ def generate_script(topic: str, video_format: str) -> Dict[str, Any]:
     Returns: {"title": str, "script": str, "description": str, "tags": list}
     """
     if video_format == "short":
-        word_count = "120-150 words, fast-paced, strong hook in the first sentence"
+        word_count = "100-150 words, fast-paced, strong hook in the first sentence"
     else:
-        word_count = "1500-1700 words, structured with an introduction, 6-7 key points, and a conclusion"
+        word_count = "1000-1500 words, structured with an introduction, 6-7 key points, and a conclusion"
 
     prompt = f"""
 Write a YouTube video script about: "{topic}"
@@ -79,10 +79,22 @@ Write a YouTube video script about: "{topic}"
 Requirements:
 - Length: {word_count}
 - Tone: Engaging, conversational spoken tone for voiceover delivery
-- Start with a compelling hook sentence
 - Exclude stage directions, music tags, or section headers (only spoken content)
-- Factually accurate without fabricated statistics
+- Start with a compelling hook sentence.
+- The first 1-2 sentences must create immediate curiosity, surprise, or disbelief.
+- Do NOT begin with generic phrases like "Did you know", "In today's video", "Here's something interesting", or "Have you ever wondered".
+- Reveal information progressively; do not give away the main answer immediately.
+- Every 1-2 sentences should introduce a new fact, twist, consequence, or curiosity gap.
+- Prioritize the most interesting and relevant facts; remove anything that slows the story down.
+- Avoid unnecessary background information and filler.
+- Build toward the most surprising fact or revelation near the end.
+- The final 1-2 sentences should deliver a satisfying payoff.
+- Use short, punchy sentences suitable for natural voiceover.
+- Write for spoken delivery, not for reading.
+- Avoid repetitive phrases and obvious AI-style wording.
+- Do not exaggerate facts or create fake suspense.
 
+    
 Additional fields:
 - Catchy YouTube title (under 80 characters)
 - Short YouTube description (2-3 sentences with a subscribe call-to-action)
