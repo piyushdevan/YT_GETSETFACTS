@@ -1,3 +1,6 @@
 # topic|short|Why octopuses have three hearts
 # topic|long|The real history of the Roman aqueducts
 # script|short|Did you know your brain uses 20% of your body's energy? That's more than any other organ...
+topic|short|🧀 Casu Marzu — The Cheese That Contains Live Maggots.
+topic|short|🥚 Century Egg — The Egg That Turns Black
+topic|short|🐟 Surströmming — The Fish Famous for Its Terrible Smell
