@@ -51,6 +51,15 @@ jobs:
           restore-keys: |
             sqlite-db-v1-
 
+      - name: Inspect Restored Database
+        run: |
+          echo "=== Database file ==="
+          ls -lh data/yt_automator.db
+          echo "=== Database tables ==="
+          sqlite3 data/yt_automator.db ".tables"
+          echo "=== Database contents ==="
+          sqlite3 data/yt_automator.db ".dump"
+      
       - name: Configure Environment & Secret Credentials
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
