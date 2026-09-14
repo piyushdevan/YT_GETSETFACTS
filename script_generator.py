@@ -32,12 +32,12 @@ def generate_topic(video_format: str) -> str:
     past_topics = db_manager.get_past_topics_for_format(video_format)
     exclusion_text = ""
     if past_topics:
-        past_list_str = "\n".join(f"- {t}" for t in past_topics[:30])
+        past_list_str = "\n".join(f"- {t}" for t in past_topics[:100])
         exclusion_text = f"\nDO NOT suggest any of these previously covered topics for {video_format}:\n{past_list_str}\n"
 
-    for attempt in range(4):
+    for attempt in range(10):
         prompt = f"""
-You generate curiosity-driven topic with strong potential for broad YouTube audience interest.
+You generate ONE FRESH curiosity-driven topic with strong potential for broad YouTube audience interest.
 Niche: {config.CHANNEL_NICHE}
 TOPIC SELECTION RULES:
 - Prefer topics connected to recent events, discoveries, records, sightings,
