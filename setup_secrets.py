@@ -45,7 +45,7 @@ def setup_secrets() -> None:
         f.write(f"GEMINI_API_KEY={gemini_key}\n")
         f.write(f"PEXELS_API_KEY={pexels_key}\n")
         f.write("CHANNEL_NICHE=Curiosity-Driven Viral Explainers: the surprising facts, hidden stories and fascinating reasons behind trending events, strange discoveries, technology, science, history and internet phenomena. Content should create a strong 'I didn't know that' reaction and appeal to a global general audience.\n")
-        f.write("DAILY_SHORTS_COUNT=3\n")
+        f.write("DAILY_SHORTS_COUNT=2\n")
         f.write("DAILY_LONGFORM_COUNT=0\n")
         privacy_status = os.getenv("YOUTUBE_PRIVACY_STATUS", "public").strip()
         f.write(f"YOUTUBE_PRIVACY_STATUS={privacy_status}\n")
