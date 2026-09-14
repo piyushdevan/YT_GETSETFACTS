@@ -3,8 +3,12 @@ name: Daily YouTube Automation Pipeline
 on:
   schedule:
     # Triggers daily at 12:00 UTC (6:00 PM BST)
-    - cron: '30 13 * * *'  # 9:00 AM ET / 6:30 PM IST
-    - cron: '00 20 * * *'  # 4:00 PM ET / 1:30 AM IST
+      - cron: '00 10 * * *'  # 6:00 AM ET / 3:30 PM IST
+      - cron: '00 18 * * *'  # 2:00 PM ET / 11:30 PM IST
+      - cron: '00 21 * * *'  # 5:00 PM ET / 2:30 AM IST
+      - cron: '00 23 * * *'  # 7:00 PM ET / 4:30 AM IST
+      - cron: '00 01 * * *'  # 9:00 PM ET / 6:30 AM IST
+      - cron: '00 03 * * *'  # 11:00 PM ET / 8:30 AM IST
   push:
     branches: [ main, master ]
   workflow_dispatch: # Enables manual trigger button on GitHub UI
