@@ -69,7 +69,7 @@ def generate_script(topic: str, video_format: str) -> Dict[str, Any]:
     Returns: {"title": str, "script": str, "description": str, "tags": list}
     """
     if video_format == "short":
-        word_count = "100-150 words, fast-paced, strong hook in the first sentence"
+        word_count = "100-120 words, fast-paced, strong hook in the first sentence"
     else:
         word_count = "1000-1500 words, structured with an introduction, 6-7 key points, and a conclusion"
 
