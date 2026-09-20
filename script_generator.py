@@ -37,20 +37,13 @@ def generate_topic(video_format: str) -> str:
 
     for attempt in range(10):
         prompt = f"""
-You generate ONE FRESH curiosity-driven topic with strong potential for broad YouTube audience interest.
+Find ONE fresh, highly clickable YouTube topic with strong potential for broad audience views.
 Niche: {config.CHANNEL_NICHE}
-TOPIC SELECTION RULES:
-- Prefer topics connected to recent events, discoveries, records, sightings,
-  missions, research, or developments.
-- Prefer subjects that ordinary people can understand immediately.
-- Prefer topics that can be explained with compelling visuals.
-- Prefer topics that create an immediate "Wait, what?" reaction.
-- Prefer surprising, rare, extreme, mysterious, unusual, or record-breaking subjects.
-- The topic must have a strong curiosity gap.
-- Avoid topics that require specialist knowledge.
-- Avoid boring textbook-style educational topics.
-- Avoid generic "facts about X" topics.
-- Avoid topics based primarily on explanations of how ordinary systems work.
+Think creatively and choose the topic yourself. Look for stories that naturally trigger curiosity, surprise, disbelief, debate, or the feeling that "I need to know what happened."
+Prefer recent discoveries, unusual events, rare sightings, records, mysteries, controversial developments, extreme phenomena, wildlife, deep ocean, space, or anything unexpected that ordinary viewers can understand and that has strong visual potential.
+Prioritize topics that feel NEW, surprising, and highly discussable rather than generic educational subjects or recycled internet stories.
+Do not manufacture controversy or use empty clickbait. The underlying story should be strong enough to attract viewers on its own.
+Choose the ONE topic you believe has the strongest potential to make people stop scrolling, click, watch, and share.
 
 Provide ONE single unique topic idea suitable for {length_hint}.{exclusion_text}
 Reply with ONLY the topic title, nothing else. No quotes, no numbering.
@@ -81,7 +74,7 @@ Requirements:
 - Tone: Engaging, conversational spoken tone for voiceover delivery
 - Exclude stage directions, music tags, or section headers (only spoken content)
 - Start with a compelling hook sentence.
-- The first 1-2 sentences must create immediate curiosity, surprise, or disbelief.
+- The first 1-2 sentences must create immediate curiosity, surprise, controversy or disbelief.
 - Do NOT begin with generic phrases like "Did you know", "In today's video", "Here's something interesting", or "Have you ever wondered".
 - Reveal information progressively; do not give away the main answer immediately.
 - Every 1-2 sentences should introduce a new fact, twist, consequence, or curiosity gap.
