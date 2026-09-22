@@ -37,13 +37,14 @@ def generate_topic(video_format: str) -> str:
 
     for attempt in range(10):
         prompt = f"""
-Find ONE fresh, highly clickable YouTube topic with strong potential for broad audience views.
+Find ONE real, highly clickable YouTube topic with extreme viewer attraction potential.
 Niche: {config.CHANNEL_NICHE}
-Think creatively and choose the topic yourself. Look for stories that naturally trigger curiosity, surprise, disbelief, debate, or the feeling that "I need to know what happened."
-Prefer recent discoveries, unusual events, rare sightings, records, mysteries, controversial developments, extreme phenomena, wildlife, deep ocean, space, or anything unexpected that ordinary viewers can understand and that has strong visual potential.
-Prioritize topics that feel NEW, surprising, and highly discussable rather than generic educational subjects or recycled internet stories.
-Do not manufacture controversy or use empty clickbait. The underlying story should be strong enough to attract viewers on its own.
-Choose the ONE topic you believe has the strongest potential to make people stop scrolling, click, watch, and share.
+
+CRITICAL RULES FOR MAX ATTRACTION:
+1. TRUTH ONLY: The topic MUST be a 100% real, verifiable event, study, or phenomenon. Do NOT invent or fabricate facts.
+2. THE CURIOSITY GAP: Choose a real story that features an intense paradox, a shocking twist, an unexplained mystery, or an extreme scale (e.g., something massive, microscopic, ancient, or impossibly fast).
+3. EMOTIONAL HOOK: Look for stories that trigger disbelief, awe, or "how is this even possible?" reactions while remaining strictly factual.
+4. AVOID DRY ACADEMIC TOPICS: Skip standard educational overviews. Focus on high-drama real events (e.g., near-disasters, bizarre historical anomalies, extreme animal adaptations, or mind-bending physics phenomena).
 
 Provide ONE single unique topic idea suitable for {length_hint}.{exclusion_text}
 Reply with ONLY the topic title, nothing else. No quotes, no numbering.
